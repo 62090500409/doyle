@@ -1,0 +1,10 @@
+# Folder
+__pycache__/
+.vscode/
+backup/
+sherlock-project/
+ipynb/
+data/
+
+# File
+_requirement.txt

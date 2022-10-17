@@ -1,0 +1,4 @@
+name: doyle
+channels:
+  - defaults
+prefix: C:\Users\thanaphit.s\.conda\envs\doyle
