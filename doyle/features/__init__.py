@@ -400,7 +400,7 @@ class ImmutableFeature(BaseFeature):
     def fqquantile(self, qupper: float, qlower: float = 0.):
         upper = self.frequency.quantile(qupper)
         lower = self.frequency.quantile(qlower)
-        return upper, lower, self.frequency[ (lower <= self.frequency) and (self.frequency <= upper) ]
+        return upper, lower, self.frequency[ (lower <= self.frequency) & (self.frequency <= upper) ]
 
     def is_binary(self):
         return self.n_unique == 2
@@ -554,7 +554,7 @@ class NumberFeature(ImmutableFeature, RevisionFeatureMixin):
     def quantile(self, qupper: float, qlower: float = 0.):
         upper = self.notna.quantile(qupper)
         lower = self.notna.quantile(qlower)
-        return upper, lower, self.notna[ (lower <= self.notna) and (self.notna <= upper) ]
+        return upper, lower, self.notna[ (lower <= self.notna) & (self.notna <= upper) ]
 
     def info(self): return super().info() + \
                                 f"\033[47m\033[30mvalue{' '*12}\033[0m\n" +\
